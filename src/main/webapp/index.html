@@ -2,13 +2,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Formulario de cookies</title>
 </head>
 <body>
 
-<form action="Servlet1" method="post">
-Name:<input type="text" name="userName"/><br/>
-<input type="submit" value="go"/>
+<h2>Registro de usuario</h2>
+<form action="Servlet1" method="post" accept-charset="UTF-8">
+    Nombre: <input type="text" name="userName" required/><br/><br/>
+    Edad: <input type="number" name="edad" min="1" max="120" required/><br/><br/>
+    Género:
+    <select name="genero" required>
+        <option value="">-- Selecciona --</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Otro">Otro</option>
+    </select><br/><br/>
+    Ciudad: <input type="text" name="ciudad" required/><br/><br/>
+    Correo: <input type="email" name="correo" required/><br/><br/>
+    <input type="checkbox" name="notificaciones" value="true"/> Quiero recibir notificaciones<br/><br/>
+    <input type="submit" value="go"/>
 </form>
 
 </body>
