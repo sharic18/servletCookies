@@ -37,6 +37,14 @@ public class Servlet1 extends HttpServlet {
 			PrintWriter out = response.getWriter();
 
 			String n = request.getParameter("userName");
+
+			if (n == null || n.trim().isEmpty()) {
+			    out.print("<p style='color:red'>Error: Debes escribir tu nombre.</p>");
+			    out.print("<a href='index.html'>Volver al formulario</a>");
+			    out.close();
+			    return;
+			}
+			n = n.trim();
 			out.print("Welcome " + n);
 
 			Cookie ck = new Cookie("uname", n);// creating cookie object
